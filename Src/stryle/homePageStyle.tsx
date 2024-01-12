@@ -1,4 +1,6 @@
 import { StyleSheet } from "react-native";
+import { FontSizeResponsive, HeightResponsive, SpaceResponsive, WidthResponsive } from "../utils/SizeMatter";
+import { scale, verticalScale } from "react-native-size-matters";
 
 const styles = StyleSheet.create({
 	ScrollView: {
@@ -13,17 +15,18 @@ const styles = StyleSheet.create({
 		paddingHorizontal: 20,
 		flexDirection: 'row',
 		alignItems: 'center',
-		columnGap: 20
+		columnGap: 20,
+		position: 'relative'
 	},
 	videoTitle: {
-		fontSize: 20,
-		fontWeight: "600",
-		color: 'green'
+		fontSize: FontSizeResponsive(14),
+		fontWeight: "500",
+		color: '#402A9F',
+		lineHeight: FontSizeResponsive(16)
 	},
 
 	videoPara: {
-		fontSize: 14,
-		fontWeight: "400",
+		fontSize: FontSizeResponsive(14),
 	},
 
 	container: {
@@ -32,18 +35,44 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 	},
 
+	serchPosition: {
+		position: 'absolute',
+		left: SpaceResponsive(30),
+		zIndex: 1,
+		color: 'red'
+	},
+	serchInput: {
+		borderWidth: 1,
+		borderColor: '#F6F6F6',
+		backgroundColor: '#F6F6F6',
+		width: '100%',
+		position: 'relative',
+		borderRadius: 20,
+		paddingLeft: 50
+	},
 	iconContainer: {
 		position: 'absolute',
-		top: '40%',
 		zIndex: 1,
-		left: '40%',
+		// top: '45%',
+		// left: '45%',
+		top: SpaceResponsive(130),
+		left: SpaceResponsive(180),
 		backgroundColor: '#0000006b',
-		width: 80,
-		height: 80,
-		borderWidth: 8,
+		width: WidthResponsive(40),
+		height: HeightResponsive(45),
 		borderColor: '#ddd',
-		borderRadius: 50,
-		elevation: 2
+		borderRadius: SpaceResponsive(50),
+		elevation: 2,
+		display: 'flex',
+		justifyContent: 'center',
+		alignContent: 'center',
+		alignItems: 'center'
+	},
+
+	playIcon: {
+		width: WidthResponsive(20),
+		height: HeightResponsive(20),
+		marginLeft: SpaceResponsive(5)
 	},
 
 	videoContainer: {
@@ -52,13 +81,13 @@ const styles = StyleSheet.create({
 
 	thumbnail: {
 		width: '100%',
-		height: 300,
+		height: HeightResponsive(300),
 	},
 
 	video: {
 		flex: 1,
 		width: '100%',
-		height: 300,
+		height: HeightResponsive(300),
 	},
 
 });
