@@ -10,8 +10,8 @@ const AppNavigater = () => {
 
 	const Stack = createNativeStackNavigator();
 	return (
-		<Stack.Navigator initialRouteName='Home'>
-			<Stack.Screen name="Home" component={HomePage} options={{ headerTitle: (props) => <TopHeader /> }}/>
+		<Stack.Navigator>
+			<Stack.Screen name="Home" component={HomePage} />
 			<Stack.Screen name="SignIn" component={SignIn} options={{ headerShown: false }} />
 			<Stack.Screen name="SignUp" component={SignUp} />
 		</Stack.Navigator>

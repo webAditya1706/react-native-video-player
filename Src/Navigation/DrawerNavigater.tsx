@@ -5,31 +5,30 @@ import HomePage from '../Screen/HomePage'
 import SignIn from '../Screen/SignIn'
 import AppNavigater from './AppNavigater'
 import TopHeader from '../ComanComponant/TopHeader'
+import SignUp from '../Screen/SignUp'
+import screenRouter from '../utils/routes'
+
 const Drawer = createDrawerNavigator()
-
-const HomeScreen = ({navigation}:any) => {
-return(
-	<Drawer.Screen
-      name="Home"
-      component={HomePage}
-      options={{
-        header: () => <TopHeader navigation={navigation} />,
-      }}
-    />
-)
-}
-
 const DrawerNavigater = () => {
 	return (
-		<Drawer.Navigator>
+		<Drawer.Navigator
+		screenOptions={{
+			header: ({ navigation }) => <TopHeader navigation={navigation} />,
+		  }}
+		  initialRouteName='HomePage'
+	>
 			<Drawer.Screen
-				name='HomePage'
-				component={AppNavigater}
-				options={{ header: (props) => <TopHeader /> }}
+				name={screenRouter.home.name}
+				component={screenRouter.home.component}
 			/>
 			<Drawer.Screen
-				name='SignIn'
-				component={SignIn}
+				name={screenRouter.signIn.name}
+				component={screenRouter.signIn.component}
+				options={{ headerShown: false }}
+			/>
+			<Drawer.Screen
+				name={screenRouter.signUp.name}
+				component={screenRouter.signUp.component}
 				options={{ headerShown: false }}
 			/>
 		</Drawer.Navigator>

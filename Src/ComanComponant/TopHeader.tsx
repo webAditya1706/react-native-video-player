@@ -1,22 +1,20 @@
 import React from 'react'
-import { Image, SafeAreaView, ScrollView, Text, TouchableHighlight, TouchableOpacity, View } from 'react-native'
+import { Image, SafeAreaView, ScrollView, StyleSheet, Text, TouchableHighlight, TouchableOpacity, View } from 'react-native'
 import HeaderStyle from '../stryle/HeaderStyle'
 import CommanStyle from '../stryle/CommanStyle'
 import { DrawerIcon, UserIcon } from '../utils/Images'
 import { useNavigation } from '@react-navigation/native'
+import { HeightResponsive, SpaceResponsive } from '../utils/SizeMatter'
 
-const TopHeader = (props:any) => {
-const navigation = useNavigation();
-	console.log(props,"-----------------props");
-	
+const TopHeader = ({navigation}:any) => {
+
 	return (
 		<View
-			style={[
-				CommanStyle.sectionPadding,
-				CommanStyle.justifyBetween,
-			]}
+			style={
+				Styles.headerContainer
+			}
 		>
-			<TouchableOpacity onPress={() =>{}}>
+			<TouchableOpacity onPress={() => navigation.toggleDrawer()}>
 			<Image style={[HeaderStyle.nemuIcon,]} source={DrawerIcon} />
 			</TouchableOpacity>
 			{/* <View> */}
@@ -25,5 +23,18 @@ const navigation = useNavigation();
 		</View>
 	)
 }
+
+
+
+const Styles = StyleSheet.create({
+	headerContainer:{
+		height:HeightResponsive(50),
+		display:'flex',
+		flexDirection:'row',
+		justifyContent:'space-between',
+		alignItems:'center',
+		paddingHorizontal:SpaceResponsive(20)
+	}
+})
 
 export default TopHeader
