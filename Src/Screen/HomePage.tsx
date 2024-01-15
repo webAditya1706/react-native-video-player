@@ -21,11 +21,11 @@ const HomePage = () => {
   const [videoUrl, setVideoUrl] = useState<any>();
 
 
-let duplicateThumbnil = 'http://res.cloudinary.com/doe10kbhe/video/upload/c_pad,h_200,w_300/v1704953079/xzwcmn8taltmmh7lmc7t.jpg'
+  let duplicateThumbnil = 'http://res.cloudinary.com/doe10kbhe/video/upload/c_pad,h_200,w_300/v1704953079/xzwcmn8taltmmh7lmc7t.jpg'
 
   const Homedata = async () => {
     console.log('--------------11');
-    await axios.get('http://192.168.0.104:3000/video/allvideos')
+    await axios.get('http://192.168.0.101:3000/video/allvideos')
       .then((res) => {
         console.log(res.data, 'res-------------');
 
@@ -103,9 +103,10 @@ let duplicateThumbnil = 'http://res.cloudinary.com/doe10kbhe/video/upload/c_pad,
             <View
               style={[
                 styles.sectuionContainer,
-                { marginBottom: SpaceResponsive(30),
-                  marginTop:SpaceResponsive(20)
-                 }
+                {
+                  marginBottom: SpaceResponsive(30),
+                  marginTop: SpaceResponsive(20)
+                }
               ]}>
               <Image style={styles.serchPosition} source={require('../Images/homeImage/VectorSearch.png')} />
               <TextInput
@@ -120,9 +121,9 @@ let duplicateThumbnil = 'http://res.cloudinary.com/doe10kbhe/video/upload/c_pad,
                 {
                   homeData.map((data: any, ind: any) => {
                     return (
-                      <View key={ind} style={{marginBottom:SpaceResponsive(15)}}>
+                      <View key={ind} style={{ marginBottom: SpaceResponsive(15) }}>
                         <View
-                          style={[styles.sectuionContainer,{marginBottom:SpaceResponsive(5)}]}>
+                          style={[styles.sectuionContainer, { marginBottom: SpaceResponsive(5) }]}>
                           <View
                             style={{ width: '15%' }}>
                             <Image

@@ -17,7 +17,7 @@ const HeaderStyle = StyleSheet.create({
 		width:50, 
 		height:50, 
 		borderRadius:50,
-		textAlign:'left',
+		// textAlign:'left',
 		marginRight:SpaceResponsive(30)
 	},
 	nemuIcon:{

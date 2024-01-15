@@ -1,8 +1,6 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import React from 'react'
-import { ScrollView, Text, View } from 'react-native'
 import HomePage from '../Screen/HomePage';
-import { NavigationContainer } from '@react-navigation/native';
 import SignIn from '../Screen/SignIn';
 import SignUp from '../Screen/SignUp';
 import TopHeader from '../ComanComponant/TopHeader';

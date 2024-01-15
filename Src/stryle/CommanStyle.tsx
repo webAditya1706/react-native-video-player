@@ -23,9 +23,7 @@ const CommanStyle = StyleSheet.create({
 	},
 	sectionPaddingHorigently:{
 		width: '100%',
-		// paddingHorizontal:SpaceResponsive(20),
 		paddingHorizontal: SpaceResponsive(30),
-		marginTop: -30,
 	}
 })
 

@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
 		position: 'absolute',
 		left: SpaceResponsive(30),
 		zIndex: 1,
-		color: 'red'
+		// color: 'red'
 	},
 	serchInput: {
 		borderWidth: 1,

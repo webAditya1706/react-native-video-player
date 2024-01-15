@@ -1,9 +1,14 @@
 import React from 'react'
-import { Image, SafeAreaView, ScrollView, Text, View } from 'react-native'
+import { Image, SafeAreaView, ScrollView, Text, TouchableHighlight, TouchableOpacity, View } from 'react-native'
 import HeaderStyle from '../stryle/HeaderStyle'
 import CommanStyle from '../stryle/CommanStyle'
+import { DrawerIcon, UserIcon } from '../utils/Images'
+import { useNavigation } from '@react-navigation/native'
 
-const TopHeader = () => {
+const TopHeader = (props:any) => {
+const navigation = useNavigation();
+	console.log(props,"-----------------props");
+	
 	return (
 		<View
 			style={[
@@ -11,9 +16,11 @@ const TopHeader = () => {
 				CommanStyle.justifyBetween,
 			]}
 		>
-			<Image style={[HeaderStyle.nemuIcon,]} source={require('../Images/homeImage/menu.png')} />
+			<TouchableOpacity onPress={() =>{}}>
+			<Image style={[HeaderStyle.nemuIcon,]} source={DrawerIcon} />
+			</TouchableOpacity>
 			{/* <View> */}
-			<Image style={HeaderStyle.userImage} source={{ uri: 'https://cdn-icons-png.flaticon.com/512/219/219983.png' }} />
+			<Image style={HeaderStyle.userImage} source={{ uri: UserIcon }} />
 			{/* </View> */}
 		</View>
 	)
