@@ -7,10 +7,18 @@ const HeaderStyle = StyleSheet.create({
 	headerContainer:{
 		marginBottom:SpaceResponsive(10)
 	},
+	userImageContainer:{
+		width:'50%',
+		display:'flex',
+		flexDirection:'row',
+		justifyContent:'flex-end'
+	},
 	userImage:{
 		width:50, 
 		height:50, 
-		borderRadius:50
+		borderRadius:50,
+		textAlign:'left',
+		marginRight:SpaceResponsive(30)
 	},
 	nemuIcon:{
 		width:WidthResponsive(20),

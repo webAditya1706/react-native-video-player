@@ -97,19 +97,21 @@ let duplicateThumbnil = 'http://res.cloudinary.com/doe10kbhe/video/upload/c_pad,
 
   return (
     <ScrollView style={styles.ScrollView}>
-      <TopHeader />
       {
         !isFullscreen ? (
           <View>
             <View
               style={[
                 styles.sectuionContainer,
-                { marginBottom: SpaceResponsive(30) }
+                { marginBottom: SpaceResponsive(30),
+                  marginTop:SpaceResponsive(20)
+                 }
               ]}>
               <Image style={styles.serchPosition} source={require('../Images/homeImage/VectorSearch.png')} />
               <TextInput
                 style={styles.serchInput}
                 placeholder='Serch video by your interest'
+                placeholderTextColor='#402A9F'
               />
             </View>
 
@@ -118,9 +120,9 @@ let duplicateThumbnil = 'http://res.cloudinary.com/doe10kbhe/video/upload/c_pad,
                 {
                   homeData.map((data: any, ind: any) => {
                     return (
-                      <View key={ind}>
+                      <View key={ind} style={{marginBottom:SpaceResponsive(15)}}>
                         <View
-                          style={styles.sectuionContainer}>
+                          style={[styles.sectuionContainer,{marginBottom:SpaceResponsive(5)}]}>
                           <View
                             style={{ width: '15%' }}>
                             <Image

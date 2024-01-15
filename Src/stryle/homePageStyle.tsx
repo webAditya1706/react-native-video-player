@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
 		backgroundColor: '#F6F6F6',
 		width: '100%',
 		position: 'relative',
-		borderRadius: 20,
+		borderRadius: 10,
 		paddingLeft: 50
 	},
 	iconContainer: {
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
 		// top: '45%',
 		// left: '45%',
 		top: SpaceResponsive(130),
-		left: SpaceResponsive(180),
+		left: SpaceResponsive(170),
 		backgroundColor: '#0000006b',
 		width: WidthResponsive(40),
 		height: HeightResponsive(45),

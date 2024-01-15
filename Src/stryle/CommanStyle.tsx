@@ -2,18 +2,30 @@ import { StyleSheet } from "react-native";
 import { SpaceResponsive } from "../utils/SizeMatter";
 
 const CommanStyle = StyleSheet.create({
-	justifyBetween:{
-		display:'flex',
-		flexDirection:'row',
-		justifyContent:'space-between',
-		alignItems:'center',
+	ScrollStyle: {
+		width: '100%',
+		backgroundColor: "#fff",
+		height: '100%'
 	},
-	sectionPadding:{
-		paddingHorizontal:SpaceResponsive(20),
-		paddingVertical:SpaceResponsive(10),
-		backgroundColor:'#fff',
-		elevation:5,
-		margin:0
+	justifyBetween: {
+		flex: 1,
+		flexDirection: 'row',
+		justifyContent: 'space-between',
+		alignItems: 'center',
+	},
+	sectionPadding: {
+		width: '100%',
+		// paddingHorizontal:SpaceResponsive(20),
+		paddingVertical: SpaceResponsive(10),
+		backgroundColor: '#fff',
+		margin: 0,
+
+	},
+	sectionPaddingHorigently:{
+		width: '100%',
+		// paddingHorizontal:SpaceResponsive(20),
+		paddingHorizontal: SpaceResponsive(30),
+		marginTop: -30,
 	}
 })
 
