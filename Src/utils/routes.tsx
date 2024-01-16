@@ -1,21 +1,25 @@
-import HomePage from "../Screen/HomePage";
-import SignIn from "../Screen/SignIn";
-import SignUp from "../Screen/SignUp";
+import HomePageScreen from "../Screen/HomePageScreen";
+import ProfileScreen from "../Screen/ProfileScreen";
+import SignInScreen from "../Screen/SignInScreen";
+import SignUpScreen from "../Screen/SignUpScreen";
 
 const screenRouter = {
 	home:{
-		name:'Home',
-		component:HomePage
+		name:'HomeScreen',
+		component:HomePageScreen
 	},
 	signIn:{
-		name:'SignIn',
-		component:SignIn
+		name:'SignInScreen',
+		component:SignInScreen
 	},
 	signUp:{
-		name:'SignUp',
-		component:SignUp
+		name:'SignUpScreen',
+		component:SignUpScreen
 	},
-
+	profileScreen:{
+		name:'ProfileScreen',
+		component:ProfileScreen
+	}
 }
 
 export default screenRouter;

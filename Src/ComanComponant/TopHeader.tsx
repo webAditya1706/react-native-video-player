@@ -8,12 +8,10 @@ import { HeightResponsive, SpaceResponsive } from '../utils/SizeMatter'
 
 const TopHeader = ({navigation,
 	screenName,}:any) => {
-console.log(navigation,'===============navigation11');
 
 	return (
 		<View style={Styles.headerContainer}>
 			<TouchableOpacity onPress={() => {
-				console.log("=====");
 				navigation.toggleDrawer()
 			}}>
 			<Image style={[HeaderStyle.nemuIcon,]} source={DrawerIcon} />

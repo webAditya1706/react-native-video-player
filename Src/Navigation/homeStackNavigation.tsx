@@ -14,10 +14,13 @@ const homeStackNavigation = () => {
 				options={{headerShown:false}}/>
 			<Stack.Screen
 				name={screenRouter.signIn.name}
-				component={screenRouter.signIn.component} />
+				component={screenRouter.signIn.component}
+				options={{headerShown:false}} />
 			<Stack.Screen
 				name={screenRouter.signUp.name}
-				component={screenRouter.signUp.component} />
+				component={screenRouter.signUp.component}
+				options={{headerShown:false}} />
+				
 		</Stack.Navigator>
 	)
 }

@@ -2,9 +2,13 @@ import { DrawerContentScrollView, DrawerItem } from "@react-navigation/drawer";
 import { Image, ImageBackground, StyleSheet, View } from "react-native";
 import { CrossIcon, drawerBg } from "../utils/Images";
 import { FontSizeResponsive, HeightResponsive, SpaceResponsive } from "../utils/SizeMatter";
+import screenRouter from "../utils/routes";
+import { useRoute } from '@react-navigation/native';
 
 const CustomDrawerContent = ({ navigation, state }:any) => {
-
+	const route = useRoute();
+	console.log(route.name,"---------------route");
+	
 	const isScreenActive = (routeName:any) => state.routeNames.includes(routeName);
 console.log(isScreenActive(),'============isScreenActive');
 
@@ -18,40 +22,37 @@ console.log(isScreenActive(),'============isScreenActive');
 			<ImageBackground style={Styles.bgImage} source={drawerBg} />
 		</View>
 		  
-		{/* Standard Drawer Items */}
-
-
 		<DrawerItem
-		  label="HomePage"
+		  label="Home"
 		  icon={() => ''}
-		  onPress={() => navigation.navigate('HomePage')}
+		  onPress={() => navigation.navigate(screenRouter.home.name)}
 		  activeTintColor='#FFFFFF'
 		  activeBackgroundColor= '#5D2E9F'
 		  inactiveTintColor ='#402A9F'
 		  labelStyle={Styles.menuItem}
 		  style={{
 			padding: 0,
-			backgroundColor: isScreenActive('HomePage') ? '#5D2E9F' : '#FFF',
+			backgroundColor: isScreenActive(screenRouter.home.name) ? '#5D2E9F' : '#FFF',
 		  }}
 		/>
 		<DrawerItem
 		  label="Sign In"
 		  icon={() => ''}
 		  
-		  onPress={() => navigation.navigate('SignIn')}
+		  onPress={() => navigation.navigate(screenRouter.signIn.name)}
 		  activeTintColor='#FFFFFF'
 		  activeBackgroundColor= '#5D2E9F'
 		  inactiveTintColor ='#402A9F'
 		  labelStyle={Styles.menuItem}
 		  style={{
 			padding: 0,
-			backgroundColor: isScreenActive('HomePage') ? '#5D2E9F' : '#FFF',
+			backgroundColor: isScreenActive(screenRouter.signIn.name) ? '#5D2E9F' : '#FFF',
 		  }}
 		/>
 		<DrawerItem
 		  label="Sign Up"
 		  icon={() => ''}
-		  onPress={() => navigation.navigate('SignUp')}
+		  onPress={() => navigation.navigate(screenRouter.signUp.name)}
 		  activeTintColor='#FFFFFF'
 		  activeBackgroundColor= '#5D2E9F'
 		  inactiveTintColor ='#402A9F'

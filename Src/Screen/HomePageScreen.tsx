@@ -14,7 +14,7 @@ import { HomeSkeleton } from '../ComanComponant/SclelnHolder';
 
 // import { Html5Entities } from 'html-entities'; 
 
-const HomePage = (props:any) => {
+const HomePageScreen = (props:any) => {
   // const entities = new Html5Entities();
 
   let play = "U+25B7"
@@ -109,7 +109,7 @@ const HomePage = (props:any) => {
   return (
     <ScrollView style={styles.ScrollView}>
       <OuterLayout 
-      screenName='screenName'
+      screenName='HomePage'
        skeleton={<HomeSkeleton />}
        {...props}
        style={{display:isFullscreen?'none':'block'}}
@@ -198,7 +198,7 @@ const HomePage = (props:any) => {
               onExitFullscreen={() => Orientation.lockToPortrait()}
               onEnd={handleVideoEnd} // Called when the video finishes
               tapAnywhereToPause={true}
-              muted={false}
+              // muted={false}
               controlTimeout={5000}
               toggleResizeModeOnFullscree={false}
               onBack={videoBack}
@@ -218,4 +218,4 @@ const HomePage = (props:any) => {
 
 
 
-export default HomePage;
+export default HomePageScreen;

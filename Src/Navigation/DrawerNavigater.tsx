@@ -1,13 +1,7 @@
 import { DrawerContentScrollView, DrawerItem, createDrawerNavigator } from '@react-navigation/drawer'
 import React from 'react'
-import { Image, Text, TouchableOpacity, View } from 'react-native'
-import HomePage from '../Screen/HomePage'
-import SignIn from '../Screen/SignIn'
-import AppNavigater from './AppNavigater'
-import TopHeader from '../ComanComponant/TopHeader'
-import SignUp from '../Screen/SignUp'
+
 import screenRouter from '../utils/routes'
-import { DrawerIcon } from '../utils/Images'
 import CustomDrawerContent from '../Constants/CustomDrawerContent'
 import homeStackNavigation from './homeStackNavigation'
 
@@ -21,7 +15,7 @@ const DrawerNavigater = () => {
 		screenOptions={{
 			headerShown: false,
 		  }}
-		  initialRouteName='HomePage'
+		  initialRouteName={screenRouter.home.name}
 	>
 			<Drawer.Screen
 				name={'homeStackNavigater'}

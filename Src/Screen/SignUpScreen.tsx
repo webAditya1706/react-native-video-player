@@ -17,7 +17,7 @@ interface FormData {
   password: string;
   confirmPasword: string;
 }
-const SignUp = ({ navigation }: any) => {
+const SignUpScreen = ({ navigation }: any) => {
 
   const { control, handleSubmit, formState: { errors } } = useForm<FormData>();
   const [isRegistered, setIsRegistered] = useState(false);
@@ -189,4 +189,4 @@ const SignUp = ({ navigation }: any) => {
   )
 }
 
-export default SignUp
+export default SignUpScreen
