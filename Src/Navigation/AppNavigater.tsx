@@ -4,17 +4,28 @@ import HomePage from '../Screen/HomePage';
 import SignIn from '../Screen/SignIn';
 import SignUp from '../Screen/SignUp';
 import TopHeader from '../ComanComponant/TopHeader';
+import { NavigationContainer } from '@react-navigation/native';
+import DrawerNavigater from './DrawerNavigater';
 
 
 const AppNavigater = () => {
 
 	const Stack = createNativeStackNavigator();
 	return (
-		<Stack.Navigator>
-			<Stack.Screen name="Home" component={HomePage} />
-			<Stack.Screen name="SignIn" component={SignIn} options={{ headerShown: false }} />
-			<Stack.Screen name="SignUp" component={SignUp} />
-		</Stack.Navigator>
+		<NavigationContainer>
+			<Stack.Navigator>
+				<Stack.Screen name="DrawerTabNavigation"
+				component={DrawerNavigater}
+				options={{ headerShown: false }}
+				/>
+				<Stack.Screen
+					name="SignIn"
+					component={SignIn} options={{ headerShown: false }} />
+				<Stack.Screen
+					name="SignUp"
+					component={SignUp} />
+			</Stack.Navigator>
+		</NavigationContainer>
 	)
 }
 

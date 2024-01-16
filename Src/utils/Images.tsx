@@ -4,6 +4,9 @@ const logoAuth = require('../Images/allImages/logo.png');
 const DrawerIcon = require('../Images/homeImage/menu.png');
 const UserIcon = 'https://cdn-icons-png.flaticon.com/512/219/219983.png'
 
-const authBg = require('../Images/allImages/backgroundForm.png')
+const authBg = require('../Images/allImages/backgroundForm.png');
 
-export {showEye, hideEye, logoAuth, DrawerIcon, UserIcon, authBg}
+const drawerBg = require('../Images/allImages/drawerbg.png');
+
+
+export {showEye, hideEye, logoAuth, DrawerIcon, UserIcon, authBg, drawerBg}

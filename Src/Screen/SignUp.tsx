@@ -67,7 +67,7 @@ const SignUp = ({ navigation }: any) => {
                 )}
                 rules={{ required: 'This field is Required' }}
               />
-              {errors.fullName && <Text>{errors.fullName.message}</Text>}
+              {errors.fullName && <Text style={CommanStyle.errorText}>{errors.fullName.message}</Text>}
             </View>
             <View style={AuthStyle.fieldView}>
               <Text style={AuthStyle.formLabel}>Email</Text>
@@ -83,7 +83,7 @@ const SignUp = ({ navigation }: any) => {
                 )}
                 rules={{ required: 'This field is Required' }}
               />
-              {errors.email && <Text>{errors.email.message}</Text>}
+              {errors.email && <Text style={CommanStyle.errorText}>{errors.email.message}</Text>}
             </View>
 
             <View style={AuthStyle.fieldView}>
@@ -101,7 +101,7 @@ const SignUp = ({ navigation }: any) => {
                 )}
                 rules={{ required: 'This field is Required' }}
               />
-              {errors.phoneNumber && <Text>{errors.phoneNumber.message}</Text>}
+              {errors.phoneNumber && <Text style={CommanStyle.errorText}>{errors.phoneNumber.message}</Text>}
             </View>
 
             <View style={AuthStyle.fieldView}>
@@ -129,7 +129,7 @@ const SignUp = ({ navigation }: any) => {
                 name="password"
                 rules={{ required: 'This field is Required' }}
               />
-              {errors.password && <Text>{errors.password.message}</Text>}
+              {errors.password && <Text style={CommanStyle.errorText}>{errors.password.message}</Text>}
             </View>
 
 
@@ -159,7 +159,7 @@ const SignUp = ({ navigation }: any) => {
                 name="confirmPasword"
                 rules={{ required: 'This field is Required' }}
               />
-              {errors.confirmPasword && <Text>{errors.confirmPasword.message}</Text>}
+              {errors.confirmPasword && <Text style={CommanStyle.errorText}>{errors.confirmPasword.message}</Text>}
             </View>
 
             {/* <Text style={AuthStyle.forgotText}>Forgot Password?</Text> */}

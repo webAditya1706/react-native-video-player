@@ -3,10 +3,12 @@ import { Image, SafeAreaView, ScrollView, StyleSheet, Text, TouchableHighlight, 
 import HeaderStyle from '../stryle/HeaderStyle'
 import CommanStyle from '../stryle/CommanStyle'
 import { DrawerIcon, UserIcon } from '../utils/Images'
-import { useNavigation } from '@react-navigation/native'
+
 import { HeightResponsive, SpaceResponsive } from '../utils/SizeMatter'
 
-const TopHeader = ({navigation}:any) => {
+const TopHeader = ({navigation,
+	screenName,}:any) => {
+console.log(navigation,'===============navigation11');
 
 	return (
 		<View
@@ -14,7 +16,10 @@ const TopHeader = ({navigation}:any) => {
 				Styles.headerContainer
 			}
 		>
-			<TouchableOpacity onPress={() => navigation.toggleDrawer()}>
+			<TouchableOpacity onPress={() => {
+				console.log("=====");
+				navigation.toggleDrawer()
+			}}>
 			<Image style={[HeaderStyle.nemuIcon,]} source={DrawerIcon} />
 			</TouchableOpacity>
 			{/* <View> */}

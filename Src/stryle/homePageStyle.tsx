@@ -7,7 +7,8 @@ const styles = StyleSheet.create({
 		width: '100%',
 		height: 'auto',
 		backgroundColor: '#fff',
-		paddingTop: 20
+		paddingTop: 20,
+		position:'relative'
 	},
 
 	sectuionContainer: {
@@ -84,10 +85,10 @@ const styles = StyleSheet.create({
 		height: HeightResponsive(300),
 	},
 
-	video: {
-		flex: 1,
+	video: {		
 		width: '100%',
 		height: HeightResponsive(300),
+		zIndex:99	
 	},
 
 });

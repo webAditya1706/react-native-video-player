@@ -24,6 +24,11 @@ const CommanStyle = StyleSheet.create({
 	sectionPaddingHorigently:{
 		width: '100%',
 		paddingHorizontal: SpaceResponsive(30),
+	},
+	errorText:{
+		color:'red',
+		fontWeight:'400',
+		marginTop:SpaceResponsive(5)
 	}
 })
 

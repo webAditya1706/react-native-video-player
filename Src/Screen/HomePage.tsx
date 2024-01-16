@@ -8,9 +8,13 @@ import LinearGradient from 'react-native-linear-gradient';
 import { scale, verticalScale } from 'react-native-size-matters';
 import { SpaceResponsive } from '../utils/SizeMatter';
 import TopHeader from '../ComanComponant/TopHeader';
+import VideoPlayer from 'react-native-video-controls';
+import { OuterLayout } from '../ComanComponant/OuterLayouts';
+import { HomeSkeleton } from '../ComanComponant/SclelnHolder';
+
 // import { Html5Entities } from 'html-entities'; 
 
-const HomePage = () => {
+const HomePage = (props:any) => {
   // const entities = new Html5Entities();
 
   let play = "U+25B7"
@@ -40,6 +44,13 @@ const HomePage = () => {
   useEffect(() => {
     Homedata()
   }, [])
+
+  const videoBack = () => {
+    setIsFullscreen(false);
+    Orientation.lockToPortrait();
+    setVideoUrl('')
+    // Set the state to indicate non-fullscreen
+  }
 
   const handleThumbnailPress = (id: any) => {
     // Lock the device to landscape mode
@@ -97,6 +108,11 @@ const HomePage = () => {
 
   return (
     <ScrollView style={styles.ScrollView}>
+      <OuterLayout 
+      screenName='screenName'
+       skeleton={<HomeSkeleton />}
+       {...props}
+       >
       {
         !isFullscreen ? (
           <View>
@@ -170,9 +186,9 @@ const HomePage = () => {
               </View>
             }
           </View>
-        ) : (<View style={{ position: 'relative', width: '100%' }}>
+        ) : (<View style={{ position: 'relative', width: '100%', }}>
           {
-            videoUrl ? <Video
+            videoUrl ? <VideoPlayer
               source={{ uri: videoUrl }}
               style={styles.video}
               paused={!isFullscreen} // Pause the video initially if not in fullscreen
@@ -182,11 +198,20 @@ const HomePage = () => {
               onEnd={handleVideoEnd} // Called when the video finishes
               tapAnywhereToPause={true}
               muted={false}
-              controlTimeout={800}
+              controlTimeout={5000}
+              toggleResizeModeOnFullscree={false}
+              onBack={videoBack}
             /> : ''
           }
+          <TouchableOpacity style={{ position: 'absolute', top: 100, left: 100 }}>
+            <Text style={{ color: 'red', zIndex: 10 }}>Prev</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={{ position: 'absolute', top: 100, right: 100 }}>
+            <Text style={{ color: 'red' }}>Next</Text>
+          </TouchableOpacity>
         </View>)
       }
+      </OuterLayout>
     </ScrollView>
   )
 };
