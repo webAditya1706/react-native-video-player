@@ -7,7 +7,6 @@ const styles = StyleSheet.create({
 		width: '100%',
 		height: 'auto',
 		backgroundColor: '#fff',
-		paddingTop: 20,
 		position:'relative'
 	},
 
@@ -87,7 +86,7 @@ const styles = StyleSheet.create({
 
 	video: {		
 		width: '100%',
-		height: HeightResponsive(300),
+		height: HeightResponsive(380),
 		zIndex:99	
 	},
 

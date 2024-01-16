@@ -8,5 +8,7 @@ const authBg = require('../Images/allImages/backgroundForm.png');
 
 const drawerBg = require('../Images/allImages/drawerbg.png');
 
+const CrossIcon = require('../Images/allImages/cross.png')
 
-export {showEye, hideEye, logoAuth, DrawerIcon, UserIcon, authBg, drawerBg}
+
+export {showEye, hideEye, logoAuth, DrawerIcon, UserIcon, authBg, drawerBg, CrossIcon}

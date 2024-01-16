@@ -1,7 +1,6 @@
 import { DrawerContentScrollView, DrawerItem } from "@react-navigation/drawer";
-import { ImageBackground, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import TopHeader from "../ComanComponant/TopHeader";
-import { drawerBg } from "../utils/Images";
+import { Image, ImageBackground, StyleSheet, View } from "react-native";
+import { CrossIcon, drawerBg } from "../utils/Images";
 import { FontSizeResponsive, HeightResponsive, SpaceResponsive } from "../utils/SizeMatter";
 
 const CustomDrawerContent = ({ navigation, state }:any) => {
@@ -12,6 +11,9 @@ console.log(isScreenActive(),'============isScreenActive');
 	return (
 	  <DrawerContentScrollView>
 		{/* Custom Header */}
+		<View style={{position:'absolute',}}>
+			<Image source={CrossIcon} width={100} height={100} />
+		</View>
 		<View>
 			<ImageBackground style={Styles.bgImage} source={drawerBg} />
 		</View>
@@ -35,11 +37,16 @@ console.log(isScreenActive(),'============isScreenActive');
 		<DrawerItem
 		  label="Sign In"
 		  icon={() => ''}
+		  
 		  onPress={() => navigation.navigate('SignIn')}
 		  activeTintColor='#FFFFFF'
 		  activeBackgroundColor= '#5D2E9F'
 		  inactiveTintColor ='#402A9F'
 		  labelStyle={Styles.menuItem}
+		  style={{
+			padding: 0,
+			backgroundColor: isScreenActive('HomePage') ? '#5D2E9F' : '#FFF',
+		  }}
 		/>
 		<DrawerItem
 		  label="Sign Up"

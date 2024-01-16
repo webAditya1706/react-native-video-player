@@ -33,7 +33,7 @@ const SignIn = ({ navigation }: any) => {
 
 	return (
 		<SafeAreaView>
-			<ScrollView style={CommanStyle.ScrollStyle}>
+						<ScrollView style={CommanStyle.ScrollStyle}>
 				<View>
 					<ImageBackground style={AuthStyle.AuthBG} source={require(backgroundImage)} resizeMode='cover'>
 						<Image style={AuthStyle.logoStyle} source={logoAuth} />
@@ -115,7 +115,7 @@ const SignIn = ({ navigation }: any) => {
 					</View>
 				</View>
 			</ScrollView>
-		</SafeAreaView>
+					</SafeAreaView>
 	)
 }
 

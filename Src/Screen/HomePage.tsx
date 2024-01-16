@@ -112,7 +112,8 @@ const HomePage = (props:any) => {
       screenName='screenName'
        skeleton={<HomeSkeleton />}
        {...props}
-       >
+       style={{display:isFullscreen?'none':'block'}}
+       />
       {
         !isFullscreen ? (
           <View>
@@ -211,7 +212,6 @@ const HomePage = (props:any) => {
           </TouchableOpacity>
         </View>)
       }
-      </OuterLayout>
     </ScrollView>
   )
 };

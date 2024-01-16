@@ -20,10 +20,12 @@ const AppNavigater = () => {
 				/>
 				<Stack.Screen
 					name="SignIn"
-					component={SignIn} options={{ headerShown: false }} />
+					component={SignIn} 
+					options={{ headerShown: false }} />
 				<Stack.Screen
 					name="SignUp"
-					component={SignUp} />
+					component={SignUp}
+					options={{ headerShown: false }} />
 			</Stack.Navigator>
 		</NavigationContainer>
 	)

@@ -11,11 +11,7 @@ const TopHeader = ({navigation,
 console.log(navigation,'===============navigation11');
 
 	return (
-		<View
-			style={
-				Styles.headerContainer
-			}
-		>
+		<View style={Styles.headerContainer}>
 			<TouchableOpacity onPress={() => {
 				console.log("=====");
 				navigation.toggleDrawer()
