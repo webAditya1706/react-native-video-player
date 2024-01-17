@@ -11,14 +11,13 @@ import TopHeader from '../ComanComponant/TopHeader';
 import VideoPlayer from 'react-native-video-controls';
 import { OuterLayout } from '../ComanComponant/OuterLayouts';
 import { HomeSkeleton } from '../ComanComponant/SclelnHolder';
+import { API_URL } from '../../config';
 
 // import { Html5Entities } from 'html-entities'; 
 
 const HomePageScreen = (props:any) => {
   // const entities = new Html5Entities();
 
-  let play = "U+25B7"
-  play = String.fromCharCode(9660);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [homeData, setHomeData] = useState<any>();
   const [loading, setLoading] = useState<any>();
@@ -28,17 +27,13 @@ const HomePageScreen = (props:any) => {
   let duplicateThumbnil = 'http://res.cloudinary.com/doe10kbhe/video/upload/c_pad,h_200,w_300/v1704953079/xzwcmn8taltmmh7lmc7t.jpg'
 
   const Homedata = async () => {
-    console.log('--------------11');
-    await axios.get('http://192.168.0.101:3000/video/allvideos')
+    await axios.get(`${API_URL}/video/allvideos`)
       .then((res) => {
         console.log(res.data, 'res-------------');
-
         setHomeData(res.data.videoList)
       }).catch((err) => {
         console.log(err, 'errr-------------');
-
       })
-
   }
 
   useEffect(() => {
