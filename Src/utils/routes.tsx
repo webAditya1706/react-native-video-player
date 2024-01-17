@@ -1,5 +1,5 @@
 import HomePageScreen from "../Screen/HomePageScreen";
-import ProfileScreen from "../Screen/ProfileScreen";
+import ProfileScreen from "../Screen/profile/ProfileScreen";
 import SignInScreen from "../Screen/SignInScreen";
 import SignUpScreen from "../Screen/SignUpScreen";
 

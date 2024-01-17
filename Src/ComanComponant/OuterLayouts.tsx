@@ -8,11 +8,12 @@ import {
   View,
 } from 'react-native';
 import TopHeader from './TopHeader';
+import { SpaceResponsive } from '../utils/SizeMatter';
 
 export const OuterLayout = ({ children, style, skeleton, ...props }: any) => {
 
   return (
-    <View style={[OuterLayoutstyle.section, style]}>
+    <View style={[OuterLayoutstyle.section, style, {backgroundColor:'#fff'}]}>
 
       <SafeAreaView style={OuterLayoutstyle.container}>
         <KeyboardAvoidingView
@@ -49,11 +50,19 @@ const OuterLayoutstyle = StyleSheet.create({
   section: {
     flex: 1,
     backgroundColor: 'white',
+    width:'100%'
   },
   container: {
     flex: 1,
   },
-  viewStyle: { flex: 1 },
+		
+    viewStyle: { flex: 1 ,
+      paddingHorizontal: SpaceResponsive(20),
+		paddingVertical: SpaceResponsive(10),
+    width:'100%',
+		backgroundColor: '#fff',
+		margin:0,
+  },
 });
 
 

@@ -58,6 +58,15 @@ console.log(isScreenActive(),'============isScreenActive');
 		  inactiveTintColor ='#402A9F'
 		  labelStyle={Styles.menuItem}
 		/>
+		<DrawerItem
+		  label="Profile"
+		  icon={() => ''}
+		  onPress={() => navigation.navigate(screenRouter.profileScreen.name)}
+		  activeTintColor='#FFFFFF'
+		  activeBackgroundColor= '#5D2E9F'
+		  inactiveTintColor ='#402A9F'
+		  labelStyle={Styles.menuItem}
+		/>
 	  </DrawerContentScrollView>
 	);
   };
