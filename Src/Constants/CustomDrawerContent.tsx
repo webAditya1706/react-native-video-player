@@ -4,13 +4,25 @@ import { CrossIcon, drawerBg } from "../utils/Images";
 import { FontSizeResponsive, HeightResponsive, SpaceResponsive } from "../utils/SizeMatter";
 import screenRouter from "../utils/routes";
 import { useRoute } from '@react-navigation/native';
+import { useEffect, useState } from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
-const CustomDrawerContent = ({ navigation, state }:any) => {
+const CustomDrawerContent =  ({ navigation, state }:any) => {
+	const [token, setToken] = useState()
 	const route = useRoute();
 	console.log(route.name,"---------------route");
 	
 	const isScreenActive = (routeName:any) => state.routeNames.includes(routeName);
 console.log(isScreenActive(),'============isScreenActive');
+
+ 
+ const getToken = async () => {
+	const Token =  await AsyncStorage.getItem('UserLoginToken')
+	console.log(Token,'--------11-----Token');
+ }
+useEffect(() => {
+getToken()
+},[token])
 
 	return (
 	  <DrawerContentScrollView>

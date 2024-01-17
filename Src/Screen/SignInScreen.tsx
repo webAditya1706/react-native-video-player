@@ -10,6 +10,7 @@ import axios from 'axios'
 import Toast from 'react-native-toast-message'
 import { API_URL } from '../../config'
 import screenRouter from '../utils/routes'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 let backgroundImage = '../Images/allImages/backgroundForm.png'
 
 interface FormData {
@@ -28,7 +29,7 @@ const SignInScreen = ({ navigation }: any) => {
 		console.log('Form data:', data);
 		
 		await axios.post(`${API_URL}/users/signin`,data)
-      .then((res) => {
+      .then(async (res) => {
         console.log(res?.data, 'res-----1111--------');
 		if(res?.data){
          Toast.show({
@@ -38,8 +39,10 @@ const SignInScreen = ({ navigation }: any) => {
 		  })
 		//   navigation.navigate(screenRouter.home.name)
 		}
-		if(res?.data?.token){
-			console.log(res?.data?.token,'--------------res.data.token');
+		if(res.data.token){		
+			console.log(res.data.token);
+			console.log(typeof(res.data.token),'--------22')
+			await AsyncStorage.setItem('UserLoginToken',res.data.token)
 		}
       }).catch((err) => {        
         console.log( err?.response?.data,'errr------11-------');
